@@ -51,7 +51,7 @@ export class AppComponent {
       message: this.messageFormControl.value,
     }
 
-    this.http.sendEmail("http://localhost:8000/sendmail", user).subscribe(
+    this.http.sendEmail("https://robert-bridgeman.com/sendmail", user).subscribe(
       data => {
         let res: any=data;
         console.log(`From Component.ts - Message Sent: ${user.name}, ${user.company}, ${user.email}, ${user.message} with resID: ${res.messageId}`);
