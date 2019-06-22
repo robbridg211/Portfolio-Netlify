@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { HttpService } from './http.service';
-import { FlipAnimation } from '../animations'
+// import { HttpService } from './http.service';
+import { FlipAnimation } from '../animations';
+
 
 import { FormControl, Validators } from "@angular/forms";
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +18,7 @@ export class AppComponent {
 
   show: true;
 
-  constructor(public http: HttpService) { }
+  constructor(public http) { }
 
 
   nameFormControl = new FormControl("", [
@@ -44,25 +46,36 @@ export class AppComponent {
     }
   register() {
 
-    let user = {
-      name: this.nameFormControl.value,
-      company: this.companyFormControl.value,
-      email: this.emailFormControl.value,
-      message: this.messageFormControl.value,
-    }
+    const body = new HttpParams()
+    .set('form-name', 'contact')
+    .append('name', this.nameFormControl.value.name)
+    .append('email', this.emailFormControl.value.email)
+    .append('company', this.companyFormControl.value.company)
+    .append('message', this.messageFormControl.value.message)
 
-    this.http.sendEmail("https://robert-bridgeman.com/sendmail", user).subscribe(
-      data => {
-        let res: any=data;
-        console.log(`From Component.ts - Message Sent: ${user.name}, ${user.company}, ${user.email}, ${user.message} with resID: ${res.messageId}`);
-      },
-      err => {
-        console.log(err);
+    this.http.post('/', body.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded'}}).subscribe(
+      res => {}
+    );
+
+    // let user = {
+    //   name: this.nameFormControl.value,
+    //   company: this.companyFormControl.value,
+    //   email: this.emailFormControl.value,
+    //   message: this.messageFormControl.value,
+    // }
+
+    //this.http.sendEmail("https://robert-bridgeman.com/sendmail", user).subscribe(
+    //   data => {
+    //     let res: any=data;
+    //     console.log(`From Component.ts - Message Sent: ${user.name}, ${user.company}, ${user.email}, ${user.message} with resID: ${res.messageId}`);
+    //   },
+    //   err => {
+    //     console.log(err);
  
-      },() => {
-        console.log('Success!')
-      }
-      );
+    //   },() => {
+    //     console.log('Success!')
+    //   }
+    //   );
       
     }
 
