@@ -2,3 +2,16 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+/* change color of input field for angular material */
+
+.mat-form-field-empty.mat-form-field-label {
+    color: white;
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background: white;
+}
+
+/* *************************** */

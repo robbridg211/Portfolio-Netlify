@@ -263,8 +263,11 @@ button {
     width: 50%;
     margin: 0 auto;
 }
-matInput {
+.matInput {
     color: white;
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background: white;
 }
 .submission-complete {
     background-color: rgba(65, 105, 225, 0.831);
