@@ -10,6 +10,6 @@ export class HttpService {
 
   sendEmail(url, data) {
     console.log("From Service: " , data)
-    return this._http.post(url, data);
+    return this._http.post('https://robert-bridgeman.com', data);
   }
 }
