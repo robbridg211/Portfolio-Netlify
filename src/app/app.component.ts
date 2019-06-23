@@ -46,7 +46,6 @@ export class AppComponent {
       name: "", company:"", email: "", message: ""};
     }
 
-
   // register() {
 
   // let user = {

@@ -8,8 +8,8 @@ export class HttpService {
 
   constructor(private _http: HttpClient) { }
 
-  sendEmail(url, data) {
-    console.log("From Service: " , data)
-    return this._http.post('https://robert-bridgeman.com', data);
-  }
+  // sendEmail(url, data) {
+  //   console.log("From Service: " , data)
+  //   return this._http.post('https://robert-bridgeman.com/netlify/functions/email-response', data);
+  // }
 }
