@@ -11,8 +11,8 @@ exports.handler = function(event, context, callback) {
         const nodemailer = require('nodemailer');
 
 
-        // const user = JSON.parse(event.body).user;
-        // const { name, email, company, message } = user;
+        const user = JSON.parse(event.body).user;
+        const { name, email, company, message } = user;
 
 
         const output = `
@@ -46,19 +46,6 @@ exports.handler = function(event, context, callback) {
             rejectUnauthorized:false
             }
         });
-
-
-        // Parse data sent in form hook (email, name etc)
-        // const { data } = JSON.parse(event.body);
-
-        // // make sure we have data and email
-        // if (!data || !data.email) {
-        //     return callback(null, {
-        //     statusCode: 400,
-        //     body: 'Mailing details not provided'
-        //     })
-        // }
-
 
         // setup email data with unicode symbols
         let mailOptions = {

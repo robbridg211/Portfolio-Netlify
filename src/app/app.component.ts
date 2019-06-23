@@ -47,32 +47,32 @@ export class AppComponent {
     }
 
 
-  register() {
+  // register() {
 
-  let user = {
-    name: this.nameFormControl.value,
-    company: this.companyFormControl.value,
-    email: this.emailFormControl.value,
-    message: this.messageFormControl.value,
-  }
+  // let user = {
+  //   name: this.nameFormControl.value,
+  //   company: this.companyFormControl.value,
+  //   email: this.emailFormControl.value,
+  //   message: this.messageFormControl.value,
+  // }
 
   
-    this.http.sendEmail('/', user).subscribe(
+  //   this.http.sendEmail('/', user).subscribe(
 
-      data => {
-        let res: any=data;
-        console.log(`From Component.ts - Message Sent: ${user.name}, ${user.company}, ${user.email}, ${user.message} with resID: ${res.messageId}`);
-      },
-      err => {
-        console.log(err);
+  //     data => {
+  //       let res: any=data;
+  //       console.log(`From Component.ts - Message Sent: ${user.name}, ${user.company}, ${user.email}, ${user.message} with resID: ${res.messageId}`);
+  //     },
+  //     err => {
+  //       console.log(err);
  
-      },() => {
-        console.log('Success!')
+  //     },() => {
+  //       console.log('Success!')
 
-      }
-    );
+  //     }
+  //   );
       
-    }
+  //   }
 
   
   flip = 'inactive';  
