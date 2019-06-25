@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { HttpService } from './http.service';
 import { FlipAnimation } from '../animations';
 
-
-
 import { FormControl, Validators } from "@angular/forms";
 import { HttpParams } from '@angular/common/http';
 

@@ -144,7 +144,7 @@
     </div>
     <div id="contact-container">
         <div id="contact-form">
-            <form method="POST" *ngIf='!show' name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+            <form method="POST" action="/email-response" *ngIf='!show' data-netlify="true" data-netlify-honeypot="bot-field">
                 <h1>Get in touch...</h1>
 
                 <mat-form-field style="width: 100%">
@@ -181,7 +181,7 @@
 
                 <button mat-raised-button
                     [disabled]="nameFormControl.invalid || companyFormControl.invalid || emailFormControl.invalid || messageFormControl.invalid"
-                    (click)="show=!show" type="button">
+                    (click)="show=!show" type="submit">
                     Submit <i class="far fa-paper-plane"></i>
                 </button>
             </form>
