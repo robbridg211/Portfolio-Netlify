@@ -144,8 +144,11 @@
     </div>
     <div id="contact-container">
         <div id="contact-form">
-            <form method="POST" action="/email-response" *ngIf='!show' data-netlify="true" data-netlify-honeypot="bot-field">
+            <form method="POST" action="/email-response" *ngIf='!show' data-netlify="true" data-netlify-honeypot="bot-field" netlify>
                 <h1>Get in touch...</h1>
+                <p style="visibility: hidden">
+                    <label>Don't Fill this out if you're human: </label><input name="bot-field">
+                </p>
 
                 <mat-form-field style="width: 100%">
                     <input name="name" matInput placeholder="Name" [formControl]="nameFormControl" />
@@ -177,11 +180,13 @@
                         *Message is <strong>required</strong>
                     </mat-error>
 
+                <div data-netlify-recaptcha></div>
+
                 </mat-form-field>
 
                 <button mat-raised-button
                     [disabled]="nameFormControl.invalid || companyFormControl.invalid || emailFormControl.invalid || messageFormControl.invalid"
-                    (click)="show=!show" type="submit">
+                    (click)="show=!show" type="button">
                     Submit <i class="far fa-paper-plane"></i>
                 </button>
             </form>
