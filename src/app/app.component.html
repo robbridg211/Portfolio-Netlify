@@ -25,8 +25,7 @@
 
     <div id="landing">
 
-        <router-outlet></router-outlet>
-
+        <router-outlet style="background-image: 'landing.jpeg'"></router-outlet>
         <div class="flip-container">
             <div class="profCard" [@flipState]="flip">
                 <div class="profCard_side profCard_front" id="front">
@@ -144,7 +143,7 @@
     </div>
     <div id="contact-container">
         <div id="contact-form">
-            <form method="POST" action="/email-response" *ngIf='!show' data-netlify="true" data-netlify-honeypot="bot-field" netlify>
+            <form name="contact-form" method="POST" action='/' *ngIf='!show' data-netlify="true" data-netlify-honeypot="bot-field" netlify>
                 <h1>Get in touch...</h1>
                 <p style="visibility: hidden">
                     <label>Don't Fill this out if you're human: </label><input name="bot-field">
@@ -179,9 +178,7 @@
                     <mat-error *ngIf="emailFormControl.hasError('required')">
                         *Message is <strong>required</strong>
                     </mat-error>
-
                 </mat-form-field>
-                <div data-netlify-recaptcha></div>
 
                 <button mat-raised-button
                     [disabled]="nameFormControl.invalid || companyFormControl.invalid || emailFormControl.invalid || messageFormControl.invalid"

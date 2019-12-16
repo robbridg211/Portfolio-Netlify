@@ -70,7 +70,7 @@
 /* LANDING STYLES */
 
 #landing {
-    background-image: url(https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?cs=srgb&dl=forest-hd-wallpaper-landscape-129105.jpg&fm=jpg);
+    background-image: url('../assets/landing.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -266,6 +266,7 @@ button {
 .matInput {
     color: white;
 }
+
 .mat-form-field-appearance-legacy .mat-form-field-underline {
     background: white;
 }
